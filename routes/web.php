@@ -28,4 +28,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/cek2',[CekController::class,'index'])->middleware(['auth', 'verified']);
+
 require __DIR__.'/auth.php';
